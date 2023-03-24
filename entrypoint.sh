@@ -4,6 +4,8 @@ echo "Starting the taging process based on commit message +semver: xxxxx"
 
 cd ${GITHUB_WORKSPACE}/${source}
 
+git config --global --add safe.directory /github/workspace
+
 #get highest tags across all branches, not just the current branch
 VERSION=`git describe --abbrev=0 --tags 2>/dev/null`
 
